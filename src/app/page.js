@@ -1,6 +1,7 @@
 "use client"; // This makes the component a Client Component
-import Image from 'next/image'
+import Image from 'next/image';
 import { useEffect, useState } from "react";
+import Link from 'next/link';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,7 +17,6 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -40,13 +40,13 @@ export default function Home() {
               href="#about"
               className="mx-4 text-xl font-semibold text-gray-200 hover:text-[#a6dc11] transition-colors duration-300"
             >
-              Acasa
+              Home
             </a>
             <a
               href="#services"
               className="mx-4 text-xl font-semibold text-gray-200 hover:text-[#a6dc11] transition-colors duration-300"
             >
-              Directory
+              Servicii
             </a>
             <a
               href="#contact"
@@ -62,31 +62,64 @@ export default function Home() {
       <section className="min-h-screen flex flex-col justify-center items-center text-center pt-24 bg-black">
         <div>
           <h2 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-[#a6dc11] to-[#044e89] text-transparent bg-clip-text drop-shadow-lg">
-            Find the Best Promoters
+            Gaseste-i pe cei mai buni!
           </h2>
           <p className="text-2xl mb-8 text-gray-400">
-            Connecting promoters with businesses looking for top-tier marketing experts.
+            Conecteaza-te cu cei mai populari pentru ati promova produsul!
           </p>
           <button
-            className="bg-[#a6dc11] px-8 py-4 text-xl font-bold text-black rounded-2xl shadow-lg shadow-green-800 hover:bg-[#8dc509] transition duration-300"
+            className="bg-[#a6dc11] px-8 py-4 text-xl font-bold text-black rounded-2xl shadow-lg shadow-green-800 cursor-pointer hover:bg-[#8dc509] transition duration-300"
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("target-section").scrollIntoView({
+              const target = document.getElementById("target-section");
+              const offset = 50;
+              const bodyRect = document.body.getBoundingClientRect().top;
+              const elementRect = target.getBoundingClientRect().top;
+              const elementPosition = elementRect - bodyRect;
+              const offsetPosition = elementPosition - offset;
+
+              window.scrollTo({
+                top: offsetPosition,
                 behavior: "smooth",
-                block: "start",
               });
             }}
           >
-            Get Started
+            Incepe
           </button>
         </div>
       </section>
 
-{/* Second and Third Section (Improved Aesthetic) */} <section id="target-section" className="py-20 bg-black/80 text-white w-full">
- <div className="max-w-screen-xl mx-auto px-6 text-center"> 
-  <h3 className="text-4xl font-extrabold mb-4 bg-gradient-to-r from-[#a6dc11] to-[#044e89] text-transparent bg-clip-text drop-shadow-lg bg-opacity-90">Who We Are</h3> 
-  <p className="text-xl mb-8">Your bridge to the best promoters in the business.</p> <Image src="/Imagini/charles-etoroma-95UF6LXe-Lo-unsplash.jpg" alt="Promoters" width={600} height={400} className="rounded-2xl shadow-lg shadow-[#800080]" /> 
-  </div> </section>
+      {/* Target Section */}
+      <section
+        id="target-section"
+        className="py-20 bg-black/90 text-white w-full flex flex-col lg:flex-row justify-center items-center"
+      >
+        <div className="w-full lg:w-4/10 max-w-screen-xl mx-auto px-6 text-center lg:text-left mb-10 lg:mb-0">
+          <Image
+            src="/Imagini/charles-etoroma-95UF6LXe-Lo-unsplash.jpg"
+            alt="Promoters"
+            width={500}
+            height={300}
+            className="rounded-2xl shadow-lg shadow-[#800080] transition-transform duration-300 hover:scale-105 w-full"
+          />
+        </div>
+        <div className="w-full lg:w-9/12 max-w-screen-xl mx-auto px-6">
+          <h3 className="text-4xl font-extrabold mb-4 bg-gradient-to-r from-[#a6dc11] to-[#044e89] text-transparent bg-clip-text drop-shadow-lg bg-opacity-90">
+            Cine suntem noi?
+          </h3>
+          <p className="text-xl mb-8">
+            Suntem podul dintre branduri și influenceri – locul unde ideile prind viață și produsele cresc. Cu noi, ai parte de colaborări rapide și ușoare, plus statistici clare pentru a urmări impactul fiecărei campanii.
+          </p>
+          <p className="text-xl mb-8">Promovează mai simplu. Crește mai rapid.</p>
+          <p className="text-sm mb-8">Conecteaza-te direct catre profilul tau</p>
+
+          <Link href="/login">
+            <button className="bg-[#a6dc11] px-8 py-4 text-xl font-bold text-black rounded-2xl shadow-lg shadow-green-800 cursor-pointer hover:bg-[#8dc509] transition duration-300">
+              Login
+            </button>
+          </Link>
+        </div>
+      </section>
 
       {/* Footer Section */}
       <footer className="py-6">
