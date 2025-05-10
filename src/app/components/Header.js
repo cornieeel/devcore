@@ -55,30 +55,31 @@ export default function Header() {
 
         <nav>
           <Link href="/" className="mx-4 text-xl font-semibold text-gray-200 hover:text-[#a6dc11] transition-colors duration-300">
-            Home
+            Acasǎ
           </Link>
           <Link href="/what-we-offer" className="mx-4 text-xl font-semibold text-gray-200 hover:text-[#a6dc11] transition-colors duration-300">
-            What We Offer
+            Oferte
           </Link>
-          <Link href="/#contact" className="mx-4 text-xl font-semibold text-gray-200 hover:text-[#a6dc11] transition-colors duration-300">
-            Contact
+          {/* Correct link for Contact */}
+          <Link href="/contact" className="mx-4 text-xl font-semibold text-gray-200 hover:text-[#a6dc11] transition-colors duration-300">
+            Contacte
           </Link>
 
           {isAuthenticated ? (
             <>
               <Link href="/dashboard" className="mx-4 text-xl font-semibold text-gray-200 hover:text-[#a6dc11] transition-colors duration-300">
-                Dashboard
+                Profil
               </Link>
               <button
                 onClick={handleLogout}
-                className="text-xl font-semibold text-gray-200 hover:text-red-500 transition-colors duration-300"
+                className="text-xl font-semibold text-gray-200 bg-red-500 cursor-pointer rounded-lg p-1 pr-2 pl-2 "
               >
-                Logout
+                Deconecteazǎ-te
               </button>
             </>
           ) : (
             <Link href="/login" className="mx-4 text-xl font-semibold text-gray-200 hover:text-[#a6dc11] transition-colors duration-300">
-              Login
+              Logheazǎ-te
             </Link>
           )}
         </nav>

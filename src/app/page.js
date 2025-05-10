@@ -25,24 +25,24 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
-      {/* Main Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center pt-32 bg-black">
-        <div>
-          <h2 className="text-6xl font-extrabold mb-4 bg-gradient-to-r from-[#a6dc11] to-[#044e89] text-transparent bg-clip-text drop-shadow-lg">
-            Gaseste-i pe cei mai buni!
-          </h2>
-          <p className="text-2xl mb-8 text-gray-400 max-w-2xl">
-            Conecteaza-te cu cei mai populari pentru a-ți promova produsul și a-ți crește brandul la nivel global.
-          </p>
-          <button
-            className="bg-[#a6dc11] px-12 py-4 text-2xl font-bold text-black rounded-2xl shadow-lg shadow-green-800 cursor-pointer hover:bg-[#8dc509] transition duration-300"
-            onClick={scrollToTarget}
-          >
-            Incepe
-          </button>
-        </div>
-      </section>
+<div className="min-h-screen bg-black text-white flex flex-col">
+  {/* Main Section */}
+  <section className="min-h-screen flex flex-col justify-center items-center text-center bg-black mt-[-100px]">
+    <div>
+      <h2 className="text-6xl font-extrabold mb-4 bg-gradient-to-r from-[#a6dc11] to-[#044e89] text-transparent bg-clip-text drop-shadow-lg">
+        Gaseste-i pe cei mai buni!
+      </h2>
+      <p className="text-2xl mb-8 text-gray-400 max-w-2xl">
+        Conecteaza-te cu cei mai populari pentru a-ți promova produsul și a-ți crește brandul.
+      </p>
+      <button
+        className="bg-[#a6dc11] px-12 py-4 text-2xl font-bold text-black rounded-2xl shadow-lg shadow-green-800 cursor-pointer hover:bg-[#8dc509] transition duration-300"
+        onClick={scrollToTarget}
+      >
+        Incepe
+      </button>
+    </div>
+  </section>
 
       {/* Target Section */}
       <section
@@ -67,28 +67,16 @@ export default function Home() {
           </p>
           <p className="text-xl mb-8">Promovează mai simplu. Crește mai rapid.</p>
 
-          <Link href="/login">
+          <Link href="/what-we-offer">
             <button className="bg-[#a6dc11] px-10 py-4 text-2xl font-bold text-black rounded-2xl shadow-lg shadow-green-800 cursor-pointer hover:bg-[#8dc509] transition duration-300">
-              Login
+              Ce va oferim?
             </button>
           </Link>
         </div>
       </section>
 
       {/* Footer Section */}
-      <footer id="footer-section" className="py-6 bg-[#111]">
-        <div className="max-w-screen-xl mx-auto px-6 text-center text-sm text-gray-300">
-          <p>&copy; 2025 Promoter Connect. All Rights Reserved.</p>
-          <div className="mt-4">
-            <a href="#privacy" className="text-[#a6dc11] hover:underline mx-2">
-              Privacy Policy
-            </a>
-            <a href="#terms" className="text-[#a6dc11] hover:underline mx-2">
-              Terms & Conditions
-            </a>
-          </div>
-        </div>
-      </footer>
+
     </div>
   );
 }

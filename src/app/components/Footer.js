@@ -1,7 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#222222] text-gray-400 py-6 text-center">
-      <p>© 2025 Dev Core. All rights reserved.</p>
-    </footer>
+          <footer id="footer-section" className="py-6 bg-[#111]">
+        <div className="max-w-screen-xl mx-auto px-6 text-center text-sm text-gray-300">
+          <p>&copy; 2025 Promoter Connect. All Rights Reserved.</p>
+        </div>
+      </footer>
   );
 }
