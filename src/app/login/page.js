@@ -15,32 +15,34 @@ export default function AuthPage() {
 
   const router = useRouter();
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  // Simulate authentication process for demo
-  if (!isLogin) {
-    // Set authentication status in localStorage on successful sign-up
-    localStorage.setItem("isAuthenticated", "true");
-    localStorage.setItem("user", JSON.stringify({ fullName, username, email })); // Save user data if needed
+    // Simulate authentication process for demo
+    if (!isLogin) {
+      // Set authentication status in localStorage on successful sign-up
+      localStorage.setItem("isAuthenticated", "true");
+      localStorage.setItem("user", JSON.stringify({ fullName, username, email }));
 
-    setShowSuccessPopup(true);
-    setTimeout(() => {
-      setShowSuccessPopup(false);
-      router.push("/dashboard"); // Redirect to dashboard after sign-up
-    }, 2000);
-  } else {
-    // Set authentication status in localStorage on successful login
-    localStorage.setItem("isAuthenticated", "true");
-    localStorage.setItem("user", JSON.stringify({ username, email })); // Save user data
+      setShowSuccessPopup(true);
+      setTimeout(() => {
+        setShowSuccessPopup(false);
+        router.push("/dashboard");
+        setTimeout(() => window.location.reload(), 100);
+      }, 2000);
+    } else {
+      // Set authentication status in localStorage on successful login
+      localStorage.setItem("isAuthenticated", "true");
+      localStorage.setItem("user", JSON.stringify({ username, email }));
 
-    setShowSuccessPopup(true);
-    setTimeout(() => {
-      setShowSuccessPopup(false);
-      router.push("/dashboard"); // Redirect to dashboard after login
-    }, 2000);
-  }
-};
+      setShowSuccessPopup(true);
+      setTimeout(() => {
+        setShowSuccessPopup(false);
+        router.push("/dashboard");
+        setTimeout(() => window.location.reload(), 100);
+      }, 2000);
+    }
+  };
 
   const toggleAuthMode = () => {
     setIsLogin(!isLogin);

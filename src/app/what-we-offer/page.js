@@ -88,10 +88,12 @@ export default function WhatWeOfferPage() {
                 expandedService === index ? "h-auto" : "h-[300px]"
               }`} // Only the clicked card expands
             >
+              <div className="flex flex-row">
+              <p>{service.svg}</p>
               <h3 className="text-3xl font-semibold text-[#a6dc11] mb-4">
                 {service.title}
               </h3>
-
+              </div>
               {/* Show description always */}
               <p className="text-gray-400 mb-4">{service.description}</p>
 

@@ -1,32 +1,13 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* styles/globals.css */
-/* globals.css */
-:root[data-theme='dark'] {
-  --bg-header: #222222;
-  --primary: #ffffff;
-  --accent: #a6dc11;
-  --background: #000000;
-  --text-color: #ffffff;
+
+
+.clip-complex {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 70% 2%, 30% 100%, 10 90%);
 }
-
-:root[data-theme='light'] {
-  --bg-header: #f9f9f9;
-  --primary: #000000;
-  --accent: #044e89;
-  --background: #ffffff;
-  --text-color: #000000;
-}
-
-/* Apply the background and text colors */
-html[data-theme='dark'],
-body[data-theme='dark'] {
-  background-color: var(--background);
-  color: var(--text-color);
-}
-
-html[data-theme='light'],
-body[data-theme='light'] {
-  background-color: var(--background);
-  color: var(--text-color);
+.wave-background {
+  clip-path: path("M0 0 Q 25% 100 50% 40 T 100% 100 L 100% 100 L 0 100 Z");
 }
