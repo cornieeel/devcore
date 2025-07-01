@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.clip-complex {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 70% 2%, 30% 100%, 10 90%);
+}
+.wave-background {
+  clip-path: path("M0 0 Q 25% 100 50% 40 T 100% 100 L 100% 100 L 0 100 Z");
+}
