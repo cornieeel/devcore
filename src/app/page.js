@@ -19,6 +19,8 @@ export default function Home() {
       behavior: "smooth",
     });
   };
+  <meta name="devcore-verification" content="devcore-test-12345" />
+
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
